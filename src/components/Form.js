@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Form() {
+const Form = () => {
+    const [formDetails, setFormDetails] = useState({
+        text: "",
+    });
+    const { text } = formDetails;
+    const formChange = (e) => {
+        console.log(formDetails);
+        setFormDetails({
+            ...formDetails,
+            [e.target.name]: e.target.value,
+        });
+    };
     return (
         <div>
             <h1> to-do app </h1>
@@ -14,6 +25,9 @@ function Form() {
                     class="form-control"
                     id="exampleFormControlInput1"
                     placeholder="task name"
+                    name="text"
+                    onChange={formChange}
+                    value={text}
                 />
             </div>
             <div>
@@ -21,6 +35,6 @@ function Form() {
             </div>
         </div>
     );
-}
+};
 
 export default Form;
