@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TodoInput = () => {
-    const [formDetails, setFormDetails] = useState({
-        text: "",
-    });
-    const { text } = formDetails;
+const TodoInput = (props) => {
+    const { text } = props.formDetails;
     const formChange = (e) => {
-        console.log(formDetails);
-        setFormDetails({
-            ...formDetails,
+        props.setFormDetails({
+            ...props.formDetails,
             [e.target.name]: e.target.value,
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        document.getElementById("input").value = "";
+        console.log("New item added");
     };
 
     return (
@@ -24,9 +22,9 @@ const TodoInput = () => {
         >
             <div className="flex-grow-1">
                 <input
+                    id="input"
                     type="text"
                     className="form-control form-control-md"
-                    id="exampleFormControlInput1"
                     placeholder="task name"
                     name="text"
                     onChange={formChange}
