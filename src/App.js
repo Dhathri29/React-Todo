@@ -1,6 +1,6 @@
 import React from "react";
-
-import Form from "./components/Form";
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
     return (
@@ -13,8 +13,13 @@ function App() {
                 </div>
                 <div className="row justify-content-center mt-5">
                     <div className="col-12 col-md-10 col-lg-7">
-                        <Form />
+                        <TodoInput />
                     </div>
+                </div>
+            </div>
+            <div className="row justify-content-center mt-5">
+                <div className="col-12 col-md-10 col-lg-7">
+                    <TodoList />
                 </div>
             </div>
         </div>

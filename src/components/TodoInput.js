@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = () => {
+const TodoInput = () => {
     const [formDetails, setFormDetails] = useState({
         text: "",
     });
@@ -12,8 +12,16 @@ const Form = () => {
             [e.target.name]: e.target.value,
         });
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
+
     return (
-        <div className="d-flex justify-content-center">
+        <form
+            onSubmit={(e) => handleSubmit(e)}
+            className="d-flex justify-content-center"
+        >
             <div>
                 <label for="exampleFormControlInput1" className="form-label">
                     <input
@@ -30,8 +38,8 @@ const Form = () => {
             <div>
                 <button className="btn btn-primary mx-2">submit</button>
             </div>
-        </div>
+        </form>
     );
 };
 
-export default Form;
+export default TodoInput;
