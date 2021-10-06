@@ -20,23 +20,21 @@ const TodoInput = () => {
     return (
         <form
             onSubmit={(e) => handleSubmit(e)}
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-start"
         >
-            <div>
-                <label for="exampleFormControlInput1" className="form-label">
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="exampleFormControlInput1"
-                        placeholder="task name"
-                        name="text"
-                        onChange={formChange}
-                        value={text}
-                    />
-                </label>
+            <div className="flex-grow-1">
+                <input
+                    type="text"
+                    className="form-control form-control-md"
+                    id="exampleFormControlInput1"
+                    placeholder="task name"
+                    name="text"
+                    onChange={formChange}
+                    value={text}
+                />
             </div>
-            <div>
-                <button className="btn btn-primary mx-2">submit</button>
+            <div className="px-2">
+                <button className="btn btn-md btn-primary">Submit</button>
             </div>
         </form>
     );

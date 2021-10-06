@@ -1,9 +1,11 @@
 const ListElement = () => {
     return (
-        <div className="list-group-item d-flex justify-content-center">
-            <p> #Task1</p>
-            <button>dn</button>
-            <button>del</button>
+        <div className="list-group-item d-flex">
+            <p className="flex-grow-1 text-start"> #Task1 </p>
+            <div className="btn-group">
+                <button className="btn btn-primary mx-2">dn</button>
+                <button className="btn btn-danger">del</button>
+            </div>
         </div>
     );
 };
