@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 
-const Form = () => {
+const Form = (props) => {
+    const { handleGetTask } = props;
     const [formDetails, setFormDetails] = useState({
         text: "",
     });
     const { text } = formDetails;
     const formChange = (e) => {
-        console.log(formDetails);
         setFormDetails({
             ...formDetails,
             [e.target.name]: e.target.value,
         });
     };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleGetTask(formDetails);
+    };
     return (
-        <div>
+        <form onSubmit={handleSubmit}>
             <h1> to-do app </h1>
             <div class="mb-3">
                 <label
@@ -31,9 +35,9 @@ const Form = () => {
                 />
             </div>
             <div>
-                <button>submit</button>
+                <button type="submit">submit</button>
             </div>
-        </div>
+        </form>
     );
 };
 
