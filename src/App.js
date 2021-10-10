@@ -4,13 +4,10 @@ import Form from "./components/Form";
 import Tasks from "./components/Tasks";
 
 function App() {
-    const [passTaskData, setPassTaskData] = useState({});
-    // console.log(passTaskData);
+    const [passTaskData, setPassTaskData] = useState([]);
+    console.log(passTaskData);
     const getTaskData = (task) => {
-        setPassTaskData({
-            ...passTaskData,
-            task,
-        });
+        setPassTaskData([...passTaskData, task]);
     };
 
     return (
